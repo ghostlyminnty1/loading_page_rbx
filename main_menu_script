@@ -1,0 +1,34 @@
+local ts = game:GetService("TweenService")
+local Mainmenu = script.Parent
+local background = Mainmenu:WaitForChild("BackgroundMain")
+local button = background:WaitForChild("TextButton")
+local logo = background:WaitForChild("Logo")
+local cam = workspace.CurrentCamera
+local music = background:WaitForChild("Music")
+
+local tweenInfo = TweenInfo.new(2.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+
+
+local logoTween = ts:Create(logo, tweenInfo, {Transparency = 1})
+local bgTween = ts:Create(background, tweenInfo, {BackgroundTransparency = 1})
+local textTween = ts:Create(button, tweenInfo, {
+	TextTransparency = 1,
+	TextStrokeTransparency = 1
+})
+
+
+button.MouseButton1Click:Connect(function()
+	logoTween:Play()
+	bgTween:Play()
+	textTween:Play()
+    music:Destroy()
+
+
+	bgTween.Completed:Wait()
+
+	-- Destroy UI
+	Mainmenu:Destroy()
+
+
+	cam.CameraType = Enum.CameraType.Custom
+end)
