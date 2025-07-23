@@ -1,0 +1,6 @@
+local plr = game:GetService("Players").LocalPlayer
+local cam = workspace.CurrentCamera
+local cameraPart = workspace:WaitForChild("MenuCamera"):WaitForChild("MenuCam")
+
+cam.CameraType = Enum.CameraType.Scriptable
+cam.CFrame = cameraPart.CFrame
