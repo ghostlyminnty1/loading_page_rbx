@@ -1,0 +1,17 @@
+local button = script.Parent
+local ts = game:GetService("TweenService")
+
+
+local tweenInfo = TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut)
+
+button.MouseEnter:Connect(function()
+	
+	local tween = ts:Create(button, tweenInfo, {TextColor3 = Color3.fromRGB(255, 0, 0)})
+	tween:Play()
+end)
+
+button.MouseLeave:Connect(function()
+	
+	local tween = ts:Create(button, tweenInfo, {TextColor3 = Color3.fromRGB(255, 255, 255)})
+	tween:Play()
+end)
