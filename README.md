@@ -1,9 +1,9 @@
 # loading_page_rbx
-A loading screen for roblox game
+A main menu
 
 this is for backup and for using in Roblox game development.
 for this
-it's about loading screen
+it's about main menu after loading screen
 
 user need to make their first UI for the screen before be able to use the code.
 
